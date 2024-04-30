@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Recipe List
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2>Recipe List</h2>
+        <ul class="list-group">
+            {% for recipe in recipes %}
+            <li class="list-group-item">
+                <a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
